@@ -2,8 +2,18 @@
 # Makefile to handle easy compilation
 #
 
-CC=gcc
-CFLAGS=-Wall
+CC		= gcc
+CFLAGS	= -Wall
+OBJECTS	= obj/brain.o
 
-brain: brain.c
-	$(CC) $(CFLAGS) brain.c -o brain
+brain: $(OBJECTS)
+	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	-rm -f $(OBJECTS)
+	-rm -f brain
+
+test_all: run_test00
+
+run_test00:
+	@echo Hello, World!
