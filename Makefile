@@ -20,7 +20,10 @@ clean:
 	-rm -f $(OBJECTS)
 	-rm -f brain
 
-test_all: run_test00 run_test01
+test_all: \
+	run_test00\
+	run_test01\
+	run_test02
 
 run_test00:
 	@echo Hello, World!
@@ -28,4 +31,9 @@ run_test00:
 run_test01:
 	@./brain examples/helloworld.bf examples/out.c
 	@$(CC) $(CFLAGS) -o out examples/out.c
+	@./out
+
+run_test02:
+	@./brain examples/rot13.bf examples/rot13.c
+	@$(CC) $(CFLAGS) -o out examples/rot13.c
 	@./out
