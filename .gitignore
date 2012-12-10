@@ -1,0 +1,4 @@
+*.swp
+brain
+out
+obj/*

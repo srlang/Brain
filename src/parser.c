@@ -31,14 +31,14 @@ int is_command(char c) {
 char COMMANDS[] = {'>', '<', '+', '-', '.', ',', '[', ']'};
 
 char * C_COMMANDS[] = {
-    "++ptr;",
-    "--ptr;",
-    "++*ptr;",
-    "--*ptr;",
-    "putchar(*ptr);",
-    "*ptr=getchar();",
-    "while (*ptr) {",
-    "}"
+    "++ptr;\n",
+    "--ptr;\n",
+    "++*ptr;\n",
+    "--*ptr;\n",
+    "putchar(*ptr);\n",
+    "*ptr=getchar();\n",
+    "while (*ptr) {\n",
+    "}\n"
 };
 
 int which_command(char c) {
@@ -50,17 +50,18 @@ int which_command(char c) {
             return i+1;
         }
     }
+    return 0;
 }
 
 
-#define TAPE_SIZE   30000
+//#define TAPE_SIZE   30000
 /* Array of cells. */
-extern char tape[TAPE_SIZE];
+//extern char tape[TAPE_SIZE];
 
 /* Pointer to current cell location in array. */
-extern char * ptr;
+//extern char * ptr;
 
-#define HEADER_SIZE 10
+#define HEADER_SIZE 11
 char * HEADER[] = {
     "/* Copyright (C) Sean R. Lang */\n",
     "\n",
@@ -77,7 +78,6 @@ char * HEADER[] = {
 
 void parse(FILE * infile, FILE * outfile) {
     char c;
-    ptr = tape;
     if (infile == NULL || outfile == NULL) {
         printf("At least one of the files given is not valid.\n");
         return;
@@ -87,9 +87,15 @@ void parse(FILE * infile, FILE * outfile) {
         fputs(HEADER[i], outfile);
     }
 
+    //output entrance to main method
+    fputs("int main(void) {\n", outfile);
+
     while ((c = fgetc(infile)) != EOF) {
         if (is_command(c)) {
             fputs(C_COMMANDS[which_command(c) - 1], outfile);
         }
     }
+
+    //output exit from main method
+    fputs("\treturn 0;\n}\n", outfile);
 }

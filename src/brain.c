@@ -11,7 +11,7 @@
 
 
 void compile(FILE * outfile) {
-    
+    return;
 }
 
 #define SUCCESS_EXIT    0
@@ -31,6 +31,7 @@ int main(int argc, char * argv[]) {
         out = fopen(filename, WRITE_MODE);
     } else {
         in = stdin;
+        out = stdout;
     }
     parse(in, out);
     compile(out);
