@@ -10,17 +10,22 @@ brain: obj/brain.o
 	-$(CC) $(CFLAGS) obj/brain.o -o brain
 
 obj/brain.o: src/brain.c
-	-mkdir -p obj
+	@mkdir -p obj
 	-$(CC) $(CFLAGS) -c src/brain.c -o obj/brain.o
 
-obj/parser.o: src/parser.c
-	-$(CC) $(CFLAGS) -c src/parser.c -o obj/parser.o
+#obj/parser.o: src/parser.c
+#	-$(CC) $(CFLAGS) -c src/parser.c -o obj/parser.o
 
 clean:
 	-rm -f $(OBJECTS)
 	-rm -f brain
 
-test_all: run_test00
+test_all: run_test00 run_test01
 
 run_test00:
 	@echo Hello, World!
+
+run_test01:
+	@./brain examples/helloworld.bf examples/out.c
+	@$(CC) $(CFLAGS) -o out examples/out.c
+	@./out
