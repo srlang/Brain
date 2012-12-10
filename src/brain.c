@@ -10,29 +10,29 @@
 #include "parser.c"
 
 
-//#define TAPE_SIZE 30000
-
-/* Array of cells. */
-//extern char tape[TAPE_SIZE];
-
-/* Pointer to current cell location in array. */
-//extern char * ptr = tape;
+void compile(FILE * outfile) {
+    
+}
 
 #define SUCCESS_EXIT    0
 #define FAILURE_EXIT    1
 #define READ_MODE       "r"
+#define WRITE_MODE      "w"
 #define MAX_FILENAME_SIZE   500
-//#define NEW(t,n) (t) malloc(sizeof(
 int main(int argc, char * argv[]) {
-    ptr = 0;
-    FILE * f;
-    if (argc > 1) {
-        char * filename = (char *) malloc( MAX_FILENAME_SIZE * sizeof(char));
+    FILE * in;
+    FILE * out;
+    if (argc > 2) {
+        char * filename = (char *) 
+            malloc( MAX_FILENAME_SIZE * sizeof(char));
         filename = strncpy(filename, argv[1], MAX_FILENAME_SIZE);
-        f = fopen(filename, READ_MODE);
+        in = fopen(filename, READ_MODE);
+        filename = strncpy(filename, argv[2], MAX_FILENAME_SIZE);
+        out = fopen(filename, WRITE_MODE);
     } else {
-        f = stdin;
+        in = stdin;
     }
-    parse(f);
+    parse(in, out);
+    compile(out);
     return SUCCESS_EXIT;
 }
