@@ -10,9 +10,6 @@
 #include "parser.c"
 
 
-void compile(FILE * outfile) {
-    return;
-}
 
 #define SUCCESS_EXIT    0
 #define FAILURE_EXIT    1
@@ -34,6 +31,5 @@ int main(int argc, char * argv[]) {
         out = stdout;
     }
     parse(in, out);
-    compile(out);
     return SUCCESS_EXIT;
 }

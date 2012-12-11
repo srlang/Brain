@@ -3,7 +3,7 @@
 #
 
 CC		= gcc
-CFLAGS	= -Wall -std=c99
+CFLAGS	= -Wall -std=c99 -O3
 OBJECTS	= obj/brain.o obj/parser.o
 
 brain: obj/brain.o

@@ -5,6 +5,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 
 
@@ -31,14 +32,14 @@ int is_command(char c) {
 char COMMANDS[] = {'>', '<', '+', '-', '.', ',', '[', ']'};
 
 char * C_COMMANDS[] = {
-    "++ptr;\n",
-    "--ptr;\n",
-    "++*ptr;\n",
-    "--*ptr;\n",
-    "putchar(*ptr);\n",
-    "*ptr=getchar();\n",
-    "while (*ptr) {\n",
-    "}\n"
+    "\t++ptr;\n",
+    "\t--ptr;\n",
+    "\t++*ptr;\n",
+    "\t--*ptr;\n",
+    "\tputchar(*ptr);\n",
+    "\t*ptr=getchar();\n",
+    "\twhile (*ptr) {\n",
+    "\t}\n"
 };
 
 int which_command(char c) {
@@ -76,11 +77,14 @@ char * HEADER[] = {
     "char * ptr = tape;\n"
 };
 
+#define FAIL_EXIT 1
+
 void parse(FILE * infile, FILE * outfile) {
     char c;
     if (infile == NULL || outfile == NULL) {
         printf("At least one of the files given is not valid.\n");
-        return;
+        exit(FAIL_EXIT);
+        //return;
     }
 
     for(int i = 0; i < HEADER_SIZE; i++) {

@@ -10,195 +10,195 @@
 char tape[TAPE_SIZE];
 char * ptr = tape;
 int main(void) {
---*ptr;
-*ptr=getchar();
-++*ptr;
-while (*ptr) {
---*ptr;
-while (*ptr) {
-++ptr;
-++ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-while (*ptr) {
-++ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
---ptr;
---*ptr;
-}
---ptr;
-++*ptr;
---ptr;
---*ptr;
-while (*ptr) {
-++ptr;
-++*ptr;
-++ptr;
-++*ptr;
-++ptr;
---*ptr;
-while (*ptr) {
-++ptr;
-++ptr;
-++ptr;
-}
---ptr;
-while (*ptr) {
-while (*ptr) {
-++ptr;
-++*ptr;
---ptr;
---*ptr;
-}
-++ptr;
-++ptr;
-++*ptr;
-++ptr;
-}
---ptr;
---ptr;
---ptr;
---ptr;
---ptr;
---*ptr;
-}
-}
-++ptr;
-++ptr;
-++ptr;
-while (*ptr) {
---*ptr;
-}
-++*ptr;
-++ptr;
---*ptr;
---*ptr;
-while (*ptr) {
---*ptr;
-while (*ptr) {
---ptr;
---*ptr;
-++ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-while (*ptr) {
---*ptr;
-}
-}
-}
---ptr;
-while (*ptr) {
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
-++*ptr;
---ptr;
-while (*ptr) {
-++ptr;
---*ptr;
-while (*ptr) {
-++ptr;
-++*ptr;
-++ptr;
-++ptr;
-}
-++ptr;
-while (*ptr) {
-++*ptr;
-while (*ptr) {
---ptr;
-++*ptr;
-++ptr;
---*ptr;
-}
-++ptr;
-++*ptr;
-++ptr;
-++ptr;
-}
---ptr;
---ptr;
---ptr;
---ptr;
---ptr;
---*ptr;
-}
-++ptr;
-++ptr;
-while (*ptr) {
---ptr;
-++*ptr;
-++ptr;
---*ptr;
-}
-++ptr;
-while (*ptr) {
---*ptr;
-while (*ptr) {
---*ptr;
---ptr;
---ptr;
-while (*ptr) {
---*ptr;
-}
-++ptr;
-++ptr;
-}
---ptr;
---ptr;
-while (*ptr) {
---ptr;
---ptr;
---*ptr;
-++ptr;
-++ptr;
---*ptr;
-}
-++ptr;
-++ptr;
-}
---ptr;
---ptr;
-while (*ptr) {
---ptr;
---ptr;
-++*ptr;
-++ptr;
-++ptr;
---*ptr;
-}
-}
---ptr;
-while (*ptr) {
---*ptr;
-}
---ptr;
-putchar(*ptr);
-while (*ptr) {
---*ptr;
-}
---ptr;
---*ptr;
-*ptr=getchar();
-++*ptr;
-}
+	--*ptr;
+	*ptr=getchar();
+	++*ptr;
+	while (*ptr) {
+	--*ptr;
+	while (*ptr) {
+	++ptr;
+	++ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	while (*ptr) {
+	++ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	--ptr;
+	--*ptr;
+	}
+	--ptr;
+	++*ptr;
+	--ptr;
+	--*ptr;
+	while (*ptr) {
+	++ptr;
+	++*ptr;
+	++ptr;
+	++*ptr;
+	++ptr;
+	--*ptr;
+	while (*ptr) {
+	++ptr;
+	++ptr;
+	++ptr;
+	}
+	--ptr;
+	while (*ptr) {
+	while (*ptr) {
+	++ptr;
+	++*ptr;
+	--ptr;
+	--*ptr;
+	}
+	++ptr;
+	++ptr;
+	++*ptr;
+	++ptr;
+	}
+	--ptr;
+	--ptr;
+	--ptr;
+	--ptr;
+	--ptr;
+	--*ptr;
+	}
+	}
+	++ptr;
+	++ptr;
+	++ptr;
+	while (*ptr) {
+	--*ptr;
+	}
+	++*ptr;
+	++ptr;
+	--*ptr;
+	--*ptr;
+	while (*ptr) {
+	--*ptr;
+	while (*ptr) {
+	--ptr;
+	--*ptr;
+	++ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	while (*ptr) {
+	--*ptr;
+	}
+	}
+	}
+	--ptr;
+	while (*ptr) {
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	++*ptr;
+	--ptr;
+	while (*ptr) {
+	++ptr;
+	--*ptr;
+	while (*ptr) {
+	++ptr;
+	++*ptr;
+	++ptr;
+	++ptr;
+	}
+	++ptr;
+	while (*ptr) {
+	++*ptr;
+	while (*ptr) {
+	--ptr;
+	++*ptr;
+	++ptr;
+	--*ptr;
+	}
+	++ptr;
+	++*ptr;
+	++ptr;
+	++ptr;
+	}
+	--ptr;
+	--ptr;
+	--ptr;
+	--ptr;
+	--ptr;
+	--*ptr;
+	}
+	++ptr;
+	++ptr;
+	while (*ptr) {
+	--ptr;
+	++*ptr;
+	++ptr;
+	--*ptr;
+	}
+	++ptr;
+	while (*ptr) {
+	--*ptr;
+	while (*ptr) {
+	--*ptr;
+	--ptr;
+	--ptr;
+	while (*ptr) {
+	--*ptr;
+	}
+	++ptr;
+	++ptr;
+	}
+	--ptr;
+	--ptr;
+	while (*ptr) {
+	--ptr;
+	--ptr;
+	--*ptr;
+	++ptr;
+	++ptr;
+	--*ptr;
+	}
+	++ptr;
+	++ptr;
+	}
+	--ptr;
+	--ptr;
+	while (*ptr) {
+	--ptr;
+	--ptr;
+	++*ptr;
+	++ptr;
+	++ptr;
+	--*ptr;
+	}
+	}
+	--ptr;
+	while (*ptr) {
+	--*ptr;
+	}
+	--ptr;
+	putchar(*ptr);
+	while (*ptr) {
+	--*ptr;
+	}
+	--ptr;
+	--*ptr;
+	*ptr=getchar();
+	++*ptr;
+	}
 	return 0;
 }
