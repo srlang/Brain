@@ -9,7 +9,7 @@ OBJECTS	= obj/brain.o obj/parser.o
 brain: obj/brain.o
 	-$(CC) $(CFLAGS) obj/brain.o -o brain
 
-obj/brain.o: src/brain.c
+obj/brain.o: src/brain.c src/parser.c
 	@mkdir -p obj
 	-$(CC) $(CFLAGS) -c src/brain.c -o obj/brain.o
 
@@ -23,7 +23,8 @@ clean:
 test_all: \
 	run_test00\
 	run_test01\
-	run_test02
+	run_test02\
+	run_test03
 
 run_test00:
 	@echo Hello, World!
@@ -36,4 +37,9 @@ run_test01:
 run_test02:
 	@./brain examples/rot13.bf examples/rot13.c
 	@$(CC) $(CFLAGS) -o out examples/rot13.c
+	@./out
+
+run_test03:
+	@./brain examples/add.bf examples/add.c
+	@$(CC) $(CFLAGS) -o out examples/add.c
 	@./out

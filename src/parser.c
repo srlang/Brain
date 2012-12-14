@@ -73,8 +73,8 @@ char * HEADER[] = {
     "\n",
     "#include<stdio.h>\n",
     "#define TAPE_SIZE 30000\n",
-    "char tape[TAPE_SIZE];\n",
-    "char * ptr = tape;\n"
+    "unsigned char tape[TAPE_SIZE];\n",
+    "unsigned char * ptr = tape;\n"
 };
 
 
