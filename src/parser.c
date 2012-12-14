@@ -32,14 +32,14 @@ int is_command(char c) {
 char COMMANDS[] = {'>', '<', '+', '-', '.', ',', '[', ']'};
 
 char * C_COMMANDS[] = {
-    "\t++ptr;\n",
-    "\t--ptr;\n",
-    "\t++*ptr;\n",
-    "\t--*ptr;\n",
-    "\tputchar(*ptr);\n",
-    "\t*ptr=getchar();\n",
-    "\twhile (*ptr) {\n",
-    "\t}\n"
+    "++ptr;\n",
+    "--ptr;\n",
+    "++*ptr;\n",
+    "--*ptr;\n",
+    "putchar(*ptr);\n",
+    "*ptr=getchar();\n",
+    "while (*ptr) {\n",
+    "}\n"
 };
 
 int which_command(char c) {
@@ -77,9 +77,11 @@ char * HEADER[] = {
     "char * ptr = tape;\n"
 };
 
+
 #define FAIL_EXIT 1
 
 void parse(FILE * infile, FILE * outfile) {
+    int tabs = 1;
     char c;
     if (infile == NULL || outfile == NULL) {
         printf("At least one of the files given is not valid.\n");
@@ -96,6 +98,12 @@ void parse(FILE * infile, FILE * outfile) {
 
     while ((c = fgetc(infile)) != EOF) {
         if (is_command(c)) {
+            if (c == ']')
+                tabs--;
+            for(int i = 0; i < tabs; i++)
+                fputc('\t', outfile);
+            if (c == '[')
+                tabs++;
             fputs(C_COMMANDS[which_command(c) - 1], outfile);
         }
     }
