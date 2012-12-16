@@ -1,6 +1,6 @@
 /*
  * brain.c - Part of the Brain program 
- *      (a Brainf*** interpreter)
+ *      (a Brainf*** translator)
  * Copyright (C) 2012 - Sean R. Lang
  */
 
