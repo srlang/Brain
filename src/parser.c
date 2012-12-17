@@ -64,7 +64,7 @@ int which_command(char c) {
 
 #define HEADER_SIZE 11
 char * HEADER[] = {
-    "/* Copyright (C) Sean R. Lang */\n",
+    "/* Copyright (C) 2012 -- Sean R. Lang */\n",
     "\n",
     "/*\n",
     " * This is a file automatically generated from the\n",
