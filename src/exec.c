@@ -75,6 +75,6 @@ int main(int argc, char * argv[]) {
     out = fopen(TEMP_FILENAME, "w+");
     parse(in, out);
     cmd = argv[2];
-    compile(argv[1], cmd);
+    compile(TEMP_FILENAME, cmd);
     return system(cmd);
 }

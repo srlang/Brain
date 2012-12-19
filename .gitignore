@@ -4,3 +4,5 @@ out
 obj/*
 examples/*.c
 a.out
+screw
+temp.c

@@ -6,8 +6,14 @@ CC		= gcc
 CFLAGS	= -Wall -std=c99 -O3
 OBJECTS	= obj/brain.o obj/parser.o
 
+screw: obj/exec.o
+	-$(CC) $(CFLAGS) obj/exec.o -o screw
+
 brain: obj/brain.o
 	-$(CC) $(CFLAGS) obj/brain.o -o brain
+
+obj/exec.o: src/exec.c src/parser.c
+	-$(CC) $(CFLAGS) -c src/exec.c -o obj/exec.o
 
 obj/brain.o: src/brain.c src/parser.c
 	@mkdir -p obj
