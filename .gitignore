@@ -3,3 +3,4 @@ brain
 out
 obj/*
 examples/*.c
+a.out
